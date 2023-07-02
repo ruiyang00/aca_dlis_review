@@ -205,7 +205,7 @@ int main(int argc, char* argv[]) {
         index.stats_.num_expand_and_scales;
 
 
-    /*
+    
     cout<<dataset_type<<","
         <<total_num_keys<<","
         <<index.stats_.num_keys<<","
@@ -226,7 +226,7 @@ int main(int argc, char* argv[]) {
         <<s.aut_num_actions<<","
         <<s.mck_solution_flag<<","
         <<performend_num_actions
-        <<"\n";*/
+        <<"\n";
 
 
     delete[] keys;
