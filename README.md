@@ -1,6 +1,6 @@
 # 1. Introduction
 
-This repository contains the source code of our space ACA on data nodes, space ACA ON internal nodeS and time ACAs code.
+This repository contains the source code of our space ACA on data nodes, space ACA on internal nodes and time ACAs.
 
 # 2. Contents
 
