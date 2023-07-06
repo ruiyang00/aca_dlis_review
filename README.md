@@ -32,7 +32,7 @@ This repository contains the source code of our space ACA on data nodes, space A
 - [ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/core): ALEX's source code
 
 # 3. Dependencies for Attacks
-- Space ACA on data nodes: [OR-Tools]([https://developers.google.com/optimization](https://developers.google.com/optimization/install).
+- Space ACA on data nodes: [OR-Tools](https://developers.google.com/optimization/install).
 - Space ACA on internal nodes: No dependencies.
 - Time ACA on ALEX: Python3 [KDE](https://scikit-learn.org/stable/install.html).
 - Time ACA on APEX: [Persistent Memory Emulator](https://pmem.io/blog/2016/02/how-to-emulate-persistent-memory/). For this attack, we need use DRAM to emulate persistent memory by reconfigring kernel settings.
