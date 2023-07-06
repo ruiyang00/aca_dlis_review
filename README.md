@@ -30,7 +30,7 @@ This repository contains the source code of our space ACA on data nodes, space A
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_graybox.sh)
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_blackbox.sh)
     - [Legitmate workload](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_legit.sh)
-- [Time ACA on APEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/apex): This directory contains APEX source code, attack logic, and [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/apex/run_time_aca.sh) to reproduce Figure 8 results.
+- [Time ACA on APEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/apex): This directory contains APEX source code, attack logic, and [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/apex/run_time_aca.sh) to reproduce Figure 8 result.
 - [ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/core): ALEX's source code.
 
 # 3. Dependencies for Attacks
