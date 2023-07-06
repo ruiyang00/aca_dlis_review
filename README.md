@@ -5,7 +5,7 @@ This repository contains the source code of our space ACA on data nodes, space A
 # 2. Contents
 
 - Space ACA on data nodes
-  - [MCK implementation](https://github.com/ruiyang00/aca_dlis_review/tree/master/attack): This directory contains data node attack logic (MCK implementation)
+  - [MCK implementation](https://github.com/ruiyang00/aca_dlis_review/blob/master/attack/attack.h): This file contains main logic of the attack (MCK implementation)
   - Source code
     - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_whitebox.cpp)
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_graybox.cpp)
