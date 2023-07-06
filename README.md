@@ -9,7 +9,8 @@ This repository contains the source code of our space ACA on data nodes, space A
   - Source code
     - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_whitebox.cpp)
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_graybox.cpp)
-      - python [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/populate_graybox_dataset.py) to generate dataset for "substitude" tree.
+      - python [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/populate_graybox_dataset.py) to generate dataset to 
+ constrcut a "substitude" tree (described in paper).
   - Scripts to regenerate the result in Figure 2
     - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_whitebox.sh)
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_graybox.sh)
@@ -22,7 +23,7 @@ This repository contains the source code of our space ACA on data nodes, space A
   - Source code
     - [White-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_whitebox.cpp)
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_graybox.cpp)
-      - python [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/populate_graybox_dataset.py) to generate dataset for "substitude" tree. 
+      - python [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/populate_graybox_dataset.py) to generate dataset to constrcut a "substitude" tree. 
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_blackbox.cpp)
   - Scripts to regenerate the result in Figure 6 ( Note: Before mounting any time ACA attacks, we need to uncomment line 1274 to 1280 in [alex.h](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/core/alex.h), as described in, to force ALEX to perform "catastrohpic expansion" instead of "catastrohpic split")
     - [White-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_whitebox.sh)
