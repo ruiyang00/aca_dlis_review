@@ -16,7 +16,7 @@ This repository contains the source code of our space ACA on data nodes, space A
 - [Space ACA on internal nodes](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark): The source code for space ACA on internal nodes.
   - Source code
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/space_aca_internal_node_blackbox.cpp)
-  - Script to regenerate the result in Table 1.
+  - Script to regenerate the result in Table 1
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_space_aca_internal_node_blackbox.sh) 
 - Time ACA on ALEX
   - Source code
