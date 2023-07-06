@@ -198,7 +198,6 @@ int main(int argc, char* argv[]) {
         target_index->stats_.num_expand_and_scales;
     
 
-    /*
     cout<<dataset_type<<","
         <<total_num_keys<<","
         <<sub_index->stats_.num_keys<<","
@@ -218,7 +217,7 @@ int main(int argc, char* argv[]) {
         <<before_data_mem<<","
         <<after_data_mem<<","
         <<performend_num_actions
-        <<"\n";*/
+        <<"\n";
 
 
     delete target_index;
