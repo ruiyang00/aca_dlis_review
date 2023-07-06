@@ -6,14 +6,24 @@ This repository contains the source code of our space ACA on data nodes, space A
 
 - Space ACA on data nodes:
   - [MCK implementation]((https://github.com/ruiyang00/aca_dlis_review/tree/master/attack)): This directry contains data node attack logic (MCK implementation).
-  - To mount whitebox:
-    - [Source code](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_whitebox.cpp).
-    - [Script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_whitebox.sh) to regenerate result in Figure 2.
-  - To mount graybox:
-    - [Source code](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_graubox.cpp).
-    - [Script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_graybox.sh) to regenerate result in Figure 2.
+  - Source code:
+    - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_whitebox.cpp).
+    - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_graybox.cpp).
+  - Scripts to regenerate the result in Figure 2.
+    - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_whitebox.sh).
+    - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_graybox.sh).
 - [Space ACA on internal nodes](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark): The source code for space ACA on internal nodes.
-- [Time ACA on ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark): The source code for time ACA on ALEX.
+  - Source code
+    - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/space_aca_internal_node_blackbox.cpp)
+  - Script to regenerate the result in Table 1.
+    - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_space_aca_internal_node_blackbox.sh) 
+- Time ACA on ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark): The source code for time ACA on ALEX.
+  - Source code
+    - [White-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_whitebox.cpp)
+    - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_graybox.cpp)
+    - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_blackbox.cpp)
+  - Scripts to regenerate the result in Figure 6 ( Note: Before mounting any time ACA attacks, we need to uncomment couple line of codes in [alex.h](), as described in, to force ALEX performing "catastrohpic expansion" instead of "catastrohpic split")
+    - 
 - [Time ACA on APEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/apex): This directry contains time ACA on APEX source code and [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/apex/run_time_aca.sh) to reproduce figure 8 results. 
 - [Experiment Scripts](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts): This directry contains the attack experiment scripts as well as the script to generate graybox sampled dataset for space ACA on data nodes and time ACA with different paramaters.
 - [ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/core): ALEX's source code
@@ -25,6 +35,6 @@ This repository contains the source code of our space ACA on data nodes, space A
 - Time ACA on APEX: [Persistent Memory Emulator](https://pmem.io/blog/2016/02/how-to-emulate-persistent-memory/). For this attack, we need use DRAM to emulate persistent memory by reconfigring kernel settings.
 
 # 3. Dependencies for Attacks
-Datasets (Longitudes, Longlat, Lognormal, YCSB) used in this paper could be found in [ALEX](https://github.com/microsoft/ALEX) repo
+Datasets (Longitudes, Longlat, Lognormal, YCSB) used in this paper could be found in [ALEX](https://github.com/microsoft/ALEX) repo.
 
 
