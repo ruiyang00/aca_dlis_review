@@ -4,7 +4,7 @@ This repository contains the source code of our space ACA on data nodes, space A
 
 # 2. Contents
 
-- [Space ACA on data nodes](https://github.com/ruiyang00/aca_dlis_review/tree/master/attack):
+- Space ACA on data nodes:
   - [MCK implementation]((https://github.com/ruiyang00/aca_dlis_review/tree/master/attack)): This directry contains data node attack logic (MCK implementation).
   - To mount whitebox:
     - [Source code](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_whitebox.cpp).
@@ -18,9 +18,9 @@ This repository contains the source code of our space ACA on data nodes, space A
 - [Experiment Scripts](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts): This directry contains the attack experiment scripts as well as the script to generate graybox sampled dataset for space ACA on data nodes and time ACA with different paramaters.
 - [ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/core): ALEX's source code
 
-# 3. Dependencies for the attacks.
+# 3. Dependencies for Attacks
 - Space ACA on data nodes: [OR-Tools]([https://developers.google.com/optimization](https://developers.google.com/optimization/install).
 - Space ACA on internal nodes: No dependencies.
 - Time ACA on ALEX: Python3 [KDE](https://scikit-learn.org/stable/install.html).
 - Time ACA on APEX: [Persistent Memory Emulator](https://pmem.io/blog/2016/02/how-to-emulate-persistent-memory/). For this attack, we need use DRAM to emulate persistent memory by reconfigring kernel settings. 
-# 4. Reproduce figures in our paper.
+
