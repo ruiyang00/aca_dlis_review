@@ -31,7 +31,6 @@ This repository contains the source code of our space ACA on data nodes, space A
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_blackbox.sh)
     - [Legitmate workload](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_legit.sh)
 - [Time ACA on APEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/apex): This directory contains time ACA's source code on APEX and [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/apex/run_time_aca.sh) to reproduce figure 8 results.
-- [Experiment Scripts](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts): This directory contains the attack experiment scripts as well as the script to generate graybox sampled dataset for space ACA on data nodes and time ACA with different paramaters.
 - [ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/core): ALEX's source code.
 
 # 3. Dependencies for Attacks
