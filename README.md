@@ -31,14 +31,12 @@ This repository contains the source code of our space ACA on data nodes, space A
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_blackbox.sh)
     - [Legitmate workload](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_legit.sh)
 
- #-[Time ACA on APEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/apex): This directory contains APEX source code, attack logic, and [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/apex/run_time_aca.sh) to reproduce the results in Figure 8.>
 - [ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/core): ALEX's source code.
 
 # 3. Dependencies for Attacks
 - Space ACA on data nodes: [OR-Tools](https://developers.google.com/optimization/install) and [KDE](https://scikit-learn.org/stable/install.html)
 - Space ACA on internal nodes: No dependencies
 - Time ACA on ALEX: [KDE](https://scikit-learn.org/stable/install.html)
- # - Time ACA on APEX: This attack requires using DRAM to emulate the persistent memory (PM) through modifying the kernel configuration file. Please refer this [article](https://pmem.io/blog/2016/02/how-to-emulate-persistent-memory/) before mounting this attack.
 
 # 4. Datasets
 Datasets (Longitudes, Longlat, Lognormal, YCSB) used in this paper could be found in [ALEX](https://github.com/microsoft/ALEX) repo.
