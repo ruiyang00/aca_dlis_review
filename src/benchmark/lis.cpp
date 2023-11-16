@@ -63,9 +63,6 @@ using namespace std;
 int main(int argc, char* argv[]) {
 
 
-
-
-
     //read flags
     auto flags = parse_flags(argc, argv);
     auto total_num_keys = stoi(get_required(flags, "total_num_keys"));
@@ -109,17 +106,13 @@ int main(int argc, char* argv[]) {
     index->bulk_load(values, init_num_keys);
 
 
-
-    /*
-
-       for(int i = init_num_keys; i < total_num_keys - num_poisoning_keys; i++) {
-       index->insert(keys[i], static_cast<PAYLOAD_TYPE>(gen_payload()));
-       }*/
-
-
     int key_range_sample_size = 1000;
 
+
+    //for Longitudes/Longlat datasets
     double diff = 0.0000000000001;
+
+    //uncomment for Lognormal and YCSB datasets
     //int diff = 1;
 
     int num_locations = num_poisoning_keys / k;
@@ -191,7 +184,6 @@ int main(int argc, char* argv[]) {
         << index->stats_.num_sideways_splits<<","
         << index->stats_.num_keys <<","
         << index->model_size() + index->data_size()<<"\n";
-
 
 
     delete index;

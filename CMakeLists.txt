@@ -30,12 +30,14 @@ add_executable(time_aca_graybox src/benchmark/time_aca_graybox.cpp)
 add_executable(time_aca_whitebox src/benchmark/time_aca_whitebox.cpp)
 add_executable(space_aca_in src/benchmark/space_aca_in.cpp)
 add_executable(space_aca_dn src/benchmark/space_aca_dn.cpp)
+add_executable(lis src/benchmark/lis.cpp)
 
 target_link_libraries(time_aca_blackbox -lortools)
 target_link_libraries(time_aca_graybox -lortools)
 target_link_libraries(time_aca_whitebox -lortools)
 target_link_libraries(space_aca_in -lortools)
 target_link_libraries(space_aca_dn -lortools)
+target_link_libraries(lis -lortools)
 
 
 set(DOCTEST_DOWNLOAD_DIR ${CMAKE_CURRENT_BINARY_DIR}/doctest)

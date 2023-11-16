@@ -16,7 +16,8 @@ This repository contains the source code of our space ACA on data nodes, space A
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_dn_graybox.sh)
 - Space ACA on internal nodes
   - Source code
-    - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/space_aca_in.cpp)
+    - [Our attack](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/space_aca_in.cpp)
+    - [SZEGP Attack](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/lis.cpp)
   - Script to regenerate the result in Table 2
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_space_aca_in_blackbox.sh) 
 - Time ACA on ALEX
@@ -34,7 +35,7 @@ This repository contains the source code of our space ACA on data nodes, space A
 - [ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/core): ALEX's source code.
 
 # 3. Dependencies for Attacks
-- Space ACA on data nodes: [OR-Tools](https://developers.google.com/optimization/install) and [KDE](https://scikit-learn.org/stable/install.html)
+- Space ACA on data nodes: [OR-Tools](https://github.com/google/or-tools) and [KDE](https://scikit-learn.org/stable/install.html)
 - Space ACA on internal nodes: No dependencies
 - Time ACA on ALEX: [KDE](https://scikit-learn.org/stable/install.html)
 
