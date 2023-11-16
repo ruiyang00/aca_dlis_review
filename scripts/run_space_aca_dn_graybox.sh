@@ -2,7 +2,7 @@
 
 #gen_job $cpp_bin $in_file $sub_in_file $i $size $perc 200000000 $a "binary" $h $k
 gen_job(){
-    echo "$1 --key_file=$2 --sub_key_file=$3 --dataset_type=$4 --total_num_keys=$5 --budget=$6 --num_action=$7 --keys_file_type=$8 --h=$9 --kde_type=${10} --init_perc=${11}" >> $job_description
+    echo "$1 --key_file=$2 --sub_key_file=$3 --dataset_type=$4 --total_num_keys=$5 --budget=$6 --num_action=$7 --keys_file_type=$8 --h=$9 --kde_type=${10} --init_perc=${11} --setting=2" >> $job_description
 }
 
 local(){
@@ -55,11 +55,11 @@ run_exps(){
         #1
     )
 
-    output_file="/home/ubuntu/data/attack_out/out/blackbox_int_1.5.out"
-    job_description="/home/ubuntu/data/attack_out/jobdir/blackbox.des"
-    job_log="/home/ubuntu/data/attack_out/logdir/blackbox.log"
+    output_file="/home/ubuntu/data/attack_out/out/graybox.out"
+    job_description="/home/ubuntu/data/attack_out/jobdir/graybox.des"
+    job_log="/home/ubuntu/data/attack_out/logdir/graybox.log"
     
-    cpp_bin=`pwd`/build/blackbox
+    cpp_bin=`pwd`/build/space_aca_dn
 
     file_list=(
         #"/home/ubuntu/data/datasets/longlat-200M.bin.data"
@@ -129,9 +129,9 @@ run_exps(){
 
 
 
-    #local $job_log $job_description $output_file
+    local $job_log $job_description $output_file
 
-    remote $job_log $job_description $output_file
+    #remote $job_log $job_description $output_file
     
     #./shutdown_nodes.sh
 

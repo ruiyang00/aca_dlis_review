@@ -52,7 +52,7 @@ run_exps(){
     job_description="/home/ubuntu/data/attack_out/jobdir/perf_aca.des"
     job_log="/home/ubuntu/data/attack_out/logdir/perf_aca.log"
     
-    cpp_bin=`pwd`/build/perf_aca_graybox
+    cpp_bin=`pwd`/build/time_aca_graybox
 
     file_list=(
         #"/home/ubuntu/data/datasets/longlat-200M.bin.data"

@@ -3,7 +3,7 @@
 
 #gen_job $cpp_double_bin $double_file $output_file 1 $size $perc $a i "binary"
 gen_job(){
-    echo "$1 --keys_file=$2 --dataset_type=$3 --budget=$4 --total_num_keys=$5 --num_action=$6 --keys_file_type=$7 --init_perc=$8" >> $job_description
+    echo "$1 --keys_file=$2 --dataset_type=$3 --budget=$4 --total_num_keys=$5 --num_action=$6 --keys_file_type=$7 --init_perc=$8 --setting=1" >> $job_description
 }
 
 local(){
@@ -64,7 +64,7 @@ run_exps(){
     job_description="/home/ubuntu/data/attack_out/jobdir/whitebox.des"
     job_log="/home/ubuntu/data/attack_out/logdir/whitebox.log"
     
-    cpp_bin=`pwd`/build/whitebox
+    cpp_bin=`pwd`/build/space_aca_dn
 
     file_list=(
         "/home/ubuntu/data/datasets/longlat-200M.bin.data"
@@ -116,9 +116,9 @@ run_exps(){
 
 
 
-    #local $job_log $job_description $output_file
+    local $job_log $job_description $output_file
 
-    remote $job_log $job_description $output_file
+    #remote $job_log $job_description $output_file
     
     #./shutdown_nodes.sh
 

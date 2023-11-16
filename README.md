@@ -25,7 +25,7 @@ This repository contains the source code of our space ACA on data nodes, space A
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_graybox.cpp)
       - python [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/populate_graybox_dataset.py) to generate dataset to constrcut a "substitude" tree. 
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_blackbox.cpp)
-  - Scripts to regenerate the results in Figure 5 ( Note: Before mounting any time ACA attacks to modified ALEX (forcing catastrohpic expansion instead of catastrohpic split) or vanilla ALEX, we need to comment/uncomment line 1274 to 1280 in [alex.h](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/core/alex.h), as described in paper)
+  - Scripts to regenerate the results in Figure 5 ( Note: Before mounting any time ACA attacks to modified ALEX (forcing catastrohpic expansion instead of catastrohpic split) or vanilla ALEX, we need to comment/uncomment line 1316 to 1321 in [alex.h](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/core/alex.h), as described in paper)
     - [White-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_whitebox.sh)
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_graybox.sh)
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_blackbox.sh)
