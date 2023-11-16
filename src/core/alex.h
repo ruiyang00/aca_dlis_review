@@ -36,6 +36,8 @@
 #include <type_traits>
 #include <algorithm>
 #include <array>
+#include <iomanip>
+
 
 #include "alex_base.h"
 #include "alex_fanout_tree.h"
@@ -1063,7 +1065,7 @@ namespace alex {
 
                          std::vector<int> res = leaf->find_key(key);
                          int idx = res[0];
-                         
+
                          if (idx < 0) {
                              return nullptr;
                          } else {
@@ -1226,8 +1228,34 @@ namespace alex {
 
                          // use to run the debug mode for understanding the cost
                          data_node_type* leaf = get_leaf(key);
+                         
+
+                         /*
+                         if(l) {
+                             //std::cout<<"duplicate:" << std::fixed << std::setprecision(std::numeric_limits<double>::digits10 + 1) << key
+                             std::cout<<"duplicate:" << key
+                                 <<" used_keys:"<< l->dbg_ + 1<< ", num_keys_:"<<leaf->num_keys_<<", num_inserts_:" <<leaf->num_inserts_
+                                 <<", shifts_per_insert:" <<leaf->shifts_per_insert()<<", expected_avg_shifts_:"<<leaf->expected_avg_shifts_
+                                 <<", a:"<<leaf->model_.a_ << ", b:"<<leaf->model_.b_ 
+                                 //<<", min_key:" <<leaf->min_key_<< ", max_key:" <<leaf->max_key_ 
+                                 <<", #DNs:" << stats_.num_data_nodes <<", #DWs:"<< stats_.num_downward_splits
+                                 <<", #SW:"<< stats_.num_sideways_splits <<", #REs:"<<leaf->num_resizes_ << ", #retra:" << stats_.num_expand_and_retrains
+                                 <<", #inrts:" << stats_.num_inserts 
+                                 <<"\n";            
+                             std::cout.flush();
+                         }*/
 
 
+                         std::cout<<"duplicate:" << std::fixed << std::setprecision(std::numeric_limits<double>::digits10 + 1) << key
+                                 <<" used_keys:"<< l->dbg_ + 1<< ", num_keys_:"<<leaf->num_keys_<<", num_inserts_:" <<leaf->num_inserts_
+                                 <<", shifts_per_insert:" <<leaf->shifts_per_insert()<<", expected_avg_shifts_:"<<leaf->expected_avg_shifts_
+                                 <<", a:"<<leaf->model_.a_ << ", b:"<<leaf->model_.b_ << ", threshold:"<<leaf->expansion_threshold_ 
+                                 //<<", min_key:" <<leaf->min_key_<< ", max_key:" <<leaf->max_key_ 
+                                 <<", #DNs:" << stats_.num_data_nodes <<", #DWs:"<< stats_.num_downward_splits
+                                 <<", #SW:"<< stats_.num_sideways_splits <<", #REs:"<<leaf->num_resizes_ << ", #retra:" << stats_.num_expand_and_retrains
+                                 <<", #inrts:" << stats_.num_inserts 
+                                 <<"\n";            
+                         std::cout.flush();
 
                          // Nonzero fail flag means that the insert did not happen
                          std::pair<int, int> ret = leaf->insert(key, payload, l);
@@ -1251,7 +1279,7 @@ namespace alex {
                              while (fail) {
                                  auto start_time = std::chrono::high_resolution_clock::now();
                                  stats_.num_expand_and_scales += leaf->num_resizes_;
-
+                                 
                                  if (parent == superroot_) {
                                      update_superroot_key_domain();
                                  }
@@ -1261,6 +1289,20 @@ namespace alex {
                                  std::vector<fanout_tree::FTNode> used_fanout_tree_nodes;
 
 
+
+                                 /*
+                                 std::cout<<"duplicate:" << std::fixed << std::setprecision(std::numeric_limits<double>::digits10 + 1) << key
+                                 <<" used_keys:"<< l->dbg_ + 1<< ", num_keys_:"<<leaf->num_keys_<<", num_inserts_:" <<leaf->num_inserts_
+                                 <<", shifts_per_insert:" <<leaf->shifts_per_insert()<<", expected_avg_shifts_:"<<leaf->expected_avg_shifts_
+                                 <<", a:"<<leaf->model_.a_ << ", b:"<<leaf->model_.b_ 
+                                 //<<", min_key:" <<leaf->min_key_<< ", max_key:" <<leaf->max_key_ 
+                                 <<", #DNs:" << stats_.num_data_nodes <<", #DWs:"<< stats_.num_downward_splits
+                                 <<", #SW:"<< stats_.num_sideways_splits <<", #REs:"<<leaf->num_resizes_ << ", #retra:" << stats_.num_expand_and_retrains
+                                 <<", #inrts:" << stats_.num_inserts 
+                                 <<"\n";            
+                                std::cout.flush();*/
+
+
                                  int fanout_tree_depth = 1;
 
                                  //fail should be >= 2 in original code
@@ -1268,16 +1310,15 @@ namespace alex {
                                  if (experimental_params_.splitting_policy_method == 0 || fail >= 2) {
                                      // always split in 2. No extra work required here
 
-                                     //Commenct below switch back to original setting
+                                     //Commenct below to switch back to original setting
 
-                                     
                                      /*
-                                     if(fail == 2) {
+                                        if(fail == 2) {
 
-                                         fanout_tree_depth = fanout_tree::find_best_fanout_existing_node<T, P>(
-                                                 parent, bucketID, stats_.num_keys, used_fanout_tree_nodes, 1, l);
-                                         fanout_tree_depth = 0;
-                                     }*/
+                                        fanout_tree_depth = fanout_tree::find_best_fanout_existing_node<T, P>(
+                                        parent, bucketID, stats_.num_keys, used_fanout_tree_nodes, 1, l);
+                                        fanout_tree_depth = 0;
+                                        }*/
 
                                  } else if (experimental_params_.splitting_policy_method == 1) {
                                      // decide between no split (i.e., expand and retrain) or splitting in
@@ -1376,23 +1417,6 @@ namespace alex {
                                      // Duplicate found and duplicates not allowed
                                      return {Iterator(leaf, insert_pos), false};
                                  }
-
-
-
-                                 /*
-
-                                    std::cout<<stats_.num_inserts<<","
-                                    <<stats_.num_model_nodes<<","
-                                    <<stats_.num_model_node_expansions<<","
-                                    <<stats_.num_data_nodes<<","
-                                    <<stats_.num_sideways_splits<<","
-                                    <<stats_.num_downward_splits<<","
-                                    <<model_size()<<","
-                                    <<data_size()
-                                    <<"\n";*/
-
-
-
 
 
                              }// end while
@@ -1528,7 +1552,7 @@ namespace alex {
 
                          while(cur != nullptr) {
 
-                             if(cur->num_keys_ > 0 || cur->is_leaf_) {
+                             if(cur->num_keys_ > 0 && cur->is_leaf_) {
                                  vec.push_back(cur);
                              }
 
@@ -1979,6 +2003,12 @@ namespace alex {
 
                          int right_boundary = old_node->lower_bound(
                                  (mid_bucketID - parent->model_.b_) / parent->model_.a_);
+
+                         //Rui: print key space
+                         
+                         //double right_key_space = (mid_bucketID - parent->model_.b_) / parent->model_.a_;
+                         //std::cout<<"right key space:" << std::fixed << std::setprecision(std::numeric_limits<double>::digits10 + 1) << right_key_space<< ", right_boundary:" << right_boundary<<"\n";
+
                          // Account for off-by-one errors due to floating-point precision issues.
                          while (right_boundary < old_node->data_capacity_ &&
                                  old_node->get_key(right_boundary) != data_node_type::kEndSentinel_ &&
@@ -2678,6 +2708,11 @@ namespace alex {
                      int num_nodes() const {
                          return stats_.num_data_nodes + stats_.num_model_nodes;
                      };
+
+                     T get_min_key_pub() const { return first_data_node()->first_key(); }
+
+                     // Returns maximum key in the index
+                     T get_max_key_pub() const { return last_data_node()->last_key(); }
 
                      // Number of data nodes in the RMI
                      int num_leaves() const { return stats_.num_data_nodes; };

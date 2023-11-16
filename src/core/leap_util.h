@@ -51,6 +51,7 @@ struct ExpeData {
     int num_keys = -1;
     int keys_capacity = -1;
     int datanode_pos = -2;
+    int dbg_=0;
 
     //0: expand and scale
     //1: expand and retrain

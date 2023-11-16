@@ -46,7 +46,7 @@ run_exps(){
     )
 
     output_file="/home/ubuntu/data/attack_out/out/perf_aca_greedy_blackbox.out"
-    cpp_bin=`pwd`/build/perf_aca_blackbox
+    cpp_bin=`pwd`/build/time_aca_blackbox
 
     file_list=(
         "/home/ubuntu/data/datasets/longlat-200M.bin.data"

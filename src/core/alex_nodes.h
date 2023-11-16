@@ -1981,6 +1981,7 @@ namespace alex {
                          int insert_using_shifts(const T& key, P payload, int pos) {
                              // Find the closest gap
                              int gap_pos = closest_gap(pos);
+                             //std::cout<<"gap_pos:"<<gap_pos<<"\n";
                              set_bit(gap_pos);
                              if (gap_pos >= pos) {
                                  for (int i = gap_pos; i > pos; i--) {

@@ -12,11 +12,10 @@ run_exps(){
         0.9
     )
 
-
     output_file="/home/ubuntu/data/attack_out/out/perf_aca_greedy_legit.out"
     
     #legitimate logic written in whitebox.cpp file
-    cpp_bin=`pwd`/build/perf_aca_whitebox
+    cpp_bin=`pwd`/build/time_aca_whitebox
 
     file_list=(
         #"/home/ubuntu/data/datasets/longlat-200M.bin.data"

@@ -61,10 +61,6 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 
-
-
-
-
     //read flags
     auto flags = parse_flags(argc, argv);
     auto init_num_keys = stoi(get_required(flags, "init_num_keys"));
@@ -97,8 +93,6 @@ int main(int argc, char* argv[]) {
             << std::endl;
         return 1;
     }
-
-
 
 
     // calcualte legitimal key index
@@ -202,9 +196,13 @@ int main(int argc, char* argv[]) {
 
             //for double type
             double diff = 0.0000000000001;
+            if(dataset_type == 1) {
+                diff = 0.00000000001;
+            } else if(dataset_type == 2 || dataset_type == 3) {
+                diff = 1;
+            }
 
             //for int type 
-            //int diff = 1;
 
             //generate c consective keys for one batch
             vector<KEY_TYPE> poisoning_keys;
@@ -295,10 +293,11 @@ int main(int argc, char* argv[]) {
         <<index.stats_.num_expand_and_retrains
         <<"\n";
 
-
-
     delete[] keys;
     delete[] values;
+
+
+
     return 0;
 
 }

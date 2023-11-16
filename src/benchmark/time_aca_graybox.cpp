@@ -140,7 +140,7 @@ int main(int argc, char* argv[]) {
     std::cout << std::setprecision(3);
 
 
-    
+
 
 
     int num_batch = 10;
@@ -167,7 +167,7 @@ int main(int argc, char* argv[]) {
 
     for(int i = 0; i < num_batch; i++) {
 
-        
+
         for(; sub_idx < stop_idx; sub_idx++) {
             sub_index.insert(sub_keys[sub_idx], static_cast<PAYLOAD_TYPE> (gen_payload()));
         }
@@ -191,7 +191,7 @@ int main(int argc, char* argv[]) {
 
 
         //prepare for poisoning insert workload
-        
+
         int running_posi_inserts = 0;
         while(running_posi_inserts < num_poison_keys_per_batch) {
 
@@ -215,16 +215,12 @@ int main(int argc, char* argv[]) {
 
             KEY_TYPE left_key = target_node->get_key(mid_pos);
 
-
-            //for double type
-            //double diff = 0.0000000000001;
-
-            //longlat
-            //double diff = 0.00000000001;
-
-            //for int type 
-            int diff = 1;
-            
+            double diff = 0.0000000000001;
+            if(dataset_type == 1) {
+                diff = 0.00000000001;
+            } else if(dataset_type == 2 || dataset_type == 3) {
+                diff = 1;
+            }
 
             //generate c consective keys for one batch
             vector<KEY_TYPE> poisoning_keys;

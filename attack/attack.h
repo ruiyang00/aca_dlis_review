@@ -24,8 +24,13 @@
 #include "leap_util.h"
 
 
+//uncomment this for double key type 
 
-//change it if KEY 
+//#define KEY_TYPE double 
+//#define PAYLOAD_TYPE double
+
+
+//uncomment this for double key type 
 #define KEY_TYPE unsigned long long
 #define PAYLOAD_TYPE unsigned long long
 using namespace std;

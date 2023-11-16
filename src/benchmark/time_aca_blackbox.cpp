@@ -131,7 +131,7 @@ int main(int argc, char* argv[]) {
     std::experimental::sample(keys, keys + total_num_keys, std::back_inserter(estimates),
             key_range_sample_size, std::mt19937{std::random_device{}()});
     std::sort(estimates.begin(), estimates.end(),
-             [](auto const& a, auto const& b) { return a < b; });
+            [](auto const& a, auto const& b) { return a < b; });
     KEY_TYPE min_key = estimates[0];
     KEY_TYPE max_key = estimates[estimates.size() - 1];
 
@@ -179,17 +179,20 @@ int main(int argc, char* argv[]) {
 
 
         //prepare for poisoning insert workload
-        
+
         int running_posi_inserts = 0;
         while(running_posi_inserts < num_poison_keys_per_batch) {
 
             KEY_TYPE left_key = dis(gen_key);
 
+
             //for double type
             double diff = 0.0000000000001;
-
-            //for int type 
-            //int diff = 1;
+            if(dataset_type == 1) {
+                diff = 0.00000000001;
+            } else if(dataset_type == 2 || dataset_type == 3) {
+                diff = 1;
+            }
 
             //generate c consective keys for one batch
             vector<KEY_TYPE> poisoning_keys;
