@@ -6,14 +6,14 @@ This repository contains the source code of our space ACA on data nodes, space A
 
 - Space ACA on data nodes
   - [MCK implementation](https://github.com/ruiyang00/aca_dlis_review/blob/master/attack/attack.h): This file contains main logic of the attack (MCK implementation)
-  - Source code
-    - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_dn_whitebox.cpp)
-    - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_dn_graybox.cpp)
+  - [Source code](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_dn.cpp)
+    - White-box: setting=1
+    - Gray-box: setting=2
       - python [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/populate_graybox_dataset.py) to generate dataset to 
  constrcut a "substitude" tree (described in paper).
   - Scripts to regenerate the result in Figure 2
-    - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_whitebox.sh)
-    - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_graybox.sh)
+    - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_dn_whitebox.sh)
+    - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_dn_graybox.sh)
 - Space ACA on internal nodes
   - Source code
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/space_aca_in_blackbox.cpp)

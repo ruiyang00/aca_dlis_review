@@ -75,7 +75,7 @@ int main(int argc, char* argv[]) {
     auto budget = stoi(get_required(flags, "budget"));
     auto dataset=stoi(get_required(flags, "dataset"));
     auto init_perc = stoi(get_required(flags, "init_perc"));
-    auto setting = stoi(get_required(flags, "setting"));
+    auto setting = stoi(get_required(flags, "setting")); // 0:blackbox, 1:whitebox, 2:graybox
 
 
     auto num_actions = stoi(get_with_default(flags, "num_action", "1"));
@@ -201,7 +201,6 @@ int main(int argc, char* argv[]) {
         }
 
 
-
         target_mem_before = target_index->model_size() + target_index->data_size();
         sub_mem_before = sub_index->model_size() + sub_index->data_size();
 
@@ -210,7 +209,6 @@ int main(int argc, char* argv[]) {
 
 
         if(budget > 0) {
-
             attack::launch_mck_attack(*sub_index,
                     num_poisoning_keys,
                     num_actions,
@@ -223,7 +221,6 @@ int main(int argc, char* argv[]) {
             for(int j = 0; j < poisoning_keys.size(); j++) {
                 target_index->insert(poisoning_keys[j], static_cast<PAYLOAD_TYPE>(gen_payload()));
             }
-
         }
 
         sub_mem_after = sub_index->model_size() + sub_index->data_size(); 
