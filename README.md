@@ -7,8 +7,8 @@ This repository contains the source code of our space ACA on data nodes, space A
 - Space ACA on data nodes
   - [MCK implementation](https://github.com/ruiyang00/aca_dlis_review/blob/master/attack/attack.h): This file contains main logic of the attack (MCK implementation)
   - Source code
-    - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_whitebox.cpp)
-    - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_data_node_graybox.cpp)
+    - [White-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_dn_whitebox.cpp)
+    - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/benchmark/space_aca_dn_graybox.cpp)
       - python [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/populate_graybox_dataset.py) to generate dataset to 
  constrcut a "substitude" tree (described in paper).
   - Scripts to regenerate the result in Figure 2
@@ -16,21 +16,22 @@ This repository contains the source code of our space ACA on data nodes, space A
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/run_space_aca_data_node_graybox.sh)
 - Space ACA on internal nodes
   - Source code
-    - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/space_aca_internal_node_blackbox.cpp)
+    - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/space_aca_in_blackbox.cpp)
   - Script to regenerate the result in Table 1
-    - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_space_aca_internal_node_blackbox.sh) 
+    - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_space_aca_in_blackbox.sh) 
 - Time ACA on ALEX
   - Source code
     - [White-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_whitebox.cpp)
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_graybox.cpp)
       - python [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/scripts/populate_graybox_dataset.py) to generate dataset to constrcut a "substitude" tree. 
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/benchmark/time_aca_blackbox.cpp)
-  - Scripts to regenerate the results in Figure 6 ( Note: Before mounting any time ACA attacks, we need to uncomment line 1274 to 1280 in [alex.h](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/core/alex.h), as described in paper, to force ALEX to perform "catastrohpic expansion" instead of "catastrohpic split")
+  - Scripts to regenerate the results in Figure 6 ( Note: Before mounting any time ACA attacks, we need to uncomment line 1274 to 1280 in [alex.h](https://github.com/ruiyang00/aca_dlis_review/blob/master/src/core/alex.h), as described in paper, to force ALEX to perform "catastrohpic expansion", modified ALEX, instead of "catastrohpic split", vanilla ALEX.)
     - [White-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_whitebox.sh)
     - [Gray-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_graybox.sh)
     - [Black-box](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_blackbox.sh)
     - [Legitmate workload](https://github.com/ruiyang00/aca_dlis_review/tree/master/scripts/run_time_aca_legit.sh)
-- [Time ACA on APEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/apex): This directory contains APEX source code, attack logic, and [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/apex/run_time_aca.sh) to reproduce the results in Figure 8.
+
+<- [Time ACA on APEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/apex): This directory contains APEX source code, attack logic, and [script](https://github.com/ruiyang00/aca_dlis_review/blob/master/apex/run_time_aca.sh) to reproduce the results in Figure 8.>
 - [ALEX](https://github.com/ruiyang00/aca_dlis_review/tree/master/src/core): ALEX's source code.
 
 # 3. Dependencies for Attacks
